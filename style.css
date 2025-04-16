@@ -60,6 +60,10 @@
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     color: #e6ffe6;
   }
+  .logo-up {
+    height: 35px;
+    align-self: center;
+  }
   /* HERO SECTION */
 .hero {
     display: flex;
@@ -538,6 +542,7 @@
     color: #b2dfdb;
     margin: 0;
 }
+
 @media (max-width: 768px) {
     .kontak-grid {
         grid-template-columns: 1fr;
@@ -553,18 +558,19 @@
   position: fixed;
   bottom: 30px;
   right: 30px;
-  background-color: #00bfa5;
+  background-color:rgb(0, 191, 48);
   color: white;
   font-size: 20px;
   padding: 12px 16px;
-  border-radius: 50%;
+  border-radius: 50px;
   text-decoration: none;
   display: none; /* Disembunyikan dulu */
   z-index: 999;
   box-shadow: 0 2px 10px rgba(0,0,0,0.3);
   transition: background-color 0.3s ease, opacity 0.3s ease;
 }
+
 .back-to-top:hover {
-  background-color: #00796b;
+  background-color:rgb(2, 215, 30);
 }
   
