@@ -34,6 +34,19 @@
       </nav>
     </div>
   </header>
+  <script>
+  // Ambil elemen tombol
+  const backToTop = document.getElementById("backToTop");
+
+  // Tampilkan tombol saat scroll > 300px
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 300) {
+      backToTop.style.display = "block";
+    } else {
+      backToTop.style.display = "none";
+    }
+  });
+  </script>
 </body>
 </html>
   <!-- HERO SECTION -->
