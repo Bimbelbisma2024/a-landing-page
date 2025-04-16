@@ -1,0 +1,552 @@
+/* Reset default */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Warna dasar dan font */
+  body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #f8f8f8;
+  }
+  
+  /* Header */
+  header {
+    background-color: #006540; /* Hijau botol tua */
+    color: white;
+    padding: 20px 0;
+  }
+  .logo h1 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+  }
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 1.0rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .logo-img {
+   width: 100px; 
+   height: auto;
+  }
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+  
+  .nav-links li a:hover {
+    transform: translateY(-2px);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: #e6ffe6;
+  }
+  /* HERO SECTION */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e0f2f1;
+    padding: 60px 0;
+    flex-wrap: wrap;
+  }
+  
+  .hero-content {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .hero-content h2 {
+    font-size: 2.5rem;
+    color: #004d40;
+    margin-bottom: 20px;
+  }
+  
+  .hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: #333;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    background-color: #00796b;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #004d40;
+  }
+  
+  .hero-image {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+  }
+  /* TENTANG KAMI */
+.tentang {
+    background-color: #f5f9f7;
+    padding: 60px 0;
+  }
+  
+  .tentang .container, .sejarah .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  
+  .tentang h2, .sejarah h2 {
+      font-size: 2.2rem;
+      color: #004d40;
+      margin-bottom: 40px;
+      text-align: left;
+      position: relative;
+      margin-left: 20px;
+  }
+  
+  .tentang h2::after, .sejarah h2::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background-color: #00796b;
+      transform: none;
+  }
+  
+  .tentang-content, .sejarah-content {
+      width: 100%;
+      margin-top: 20px;
+  }
+  
+  .tentang-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+  }
+  
+  .tentang-box {
+      flex: 1;
+      min-width: 300px;
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 77, 64, 0.1);
+      transition: transform 0.3s ease;
+  }
+  
+  .tentang-box:hover {
+      transform: translateY(-5px);
+  }
+  
+  .tentang h3 {
+      font-size: 1.5rem;
+      color: #00695c;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #e0f2f1;
+  }
+  
+  .tentang p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #2e7d32;
+      margin-bottom: 15px;
+  }
+  
+  .tentang ul {
+      margin-top: 10px;
+      padding-left: 20px;
+      list-style-type: none;
+  }
+  
+  .tentang ul li {
+      margin-bottom: 15px;
+      color: #2e7d32;
+      position: relative;
+      padding-left: 25px;
+  }
+  
+  .tentang ul li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #00796b;
+      font-weight: bold;
+  }
+/* SEJARAH */
+.sejarah {
+    background-color: #e9f7f3;
+    padding: 80px 0;
+}
+
+.sejarah .container {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.sejarah h2 {
+    font-size: 2.2rem;
+    color: #004d40;
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+}
+
+.sejarah h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #00796b;
+}
+
+.sejarah-content {
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 77, 64, 0.1);
+    transition: transform 0.3s ease;
+}
+.sejarah-content:hover {
+    transform: translateY(-5px); 
+}
+.sejarah p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #2e7d32;
+    margin-bottom: 25px;
+}
+
+.sejarah p:last-child {
+    margin-bottom: 0;
+}
+/* CAPAIAN */
+.capaian {
+    background-color: #ffffff;
+    padding: 80px 0;
+}
+
+.capaian-container {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+.capaian h2 {
+    font-size: 2rem;
+    color: #004d40;
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+  }
+
+.capaian h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #00796b;
+}
+  .capaian-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .card {
+    background-color: #e0f2f1;
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card h3 {
+    font-size: 2rem;
+    color: #00796b;
+    margin-bottom: 10px;
+  }
+  
+  .card p {
+    font-size: 1rem;
+    color: #333;
+  }
+
+  @media (max-width: 768px) {
+    .capaian-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .info-item:hover {
+        transform: translateY(-5px);
+    }
+}
+/* PROGRAM UNGGULAN */
+.program {
+    background-color: #f1f8f6;
+    padding: 60px 0;
+    text-align: center;
+  }
+  
+  .program h2 {
+    font-size: 2rem;
+    color: #004d40;
+    margin-bottom: 40px;
+    position: relative;
+  }
+  .program h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #00796b;
+  }  
+  .program-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .program-card {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+  }
+  
+  .program-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .program-card h3 {
+    font-size: 1.3rem;
+    color: #00796b;
+    margin-bottom: 10px;
+  }
+  
+  .program-card p {
+    font-size: 0.98rem;
+    color: #444;
+    line-height: 1.5;
+  }
+  .program-card .program-terakhir {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .program-card .program-terakhir p {
+    margin: 0;
+    font-style: italic;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .program-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .info-item:hover {
+        transform: translateY(-5px);
+    }
+}
+
+/* KONTAK */
+.kontak {
+    background-color: #004d40;
+    color: white;
+    padding: 80px 0 40px;
+    position: relative;
+}
+
+.kontak::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #00bfa5, #00796b, #004d40);
+}
+
+.kontak .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.kontak h2 {
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+    text-align: center;
+    position: relative;
+}
+
+.kontak h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #00bfa5;
+}
+
+.kontak-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 60px;
+}
+
+.kontak-info h3, .kontak-cta h3 {
+    font-size: 1.5rem;
+    color: #00bfa5;
+    margin-bottom: 30px;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 25px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.info-item:hover {
+    transform: translateX(10px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: #00bfa5;
+    margin-top: 5px;
+}
+
+.info-item h4 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: #00bfa5;
+}
+
+.info-item p {
+    font-size: 1rem;
+    color: #e0f2f1;
+    line-height: 1.6;
+}
+
+.kontak-cta {
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    flex-shrink: 0;    
+}
+
+.kontak-cta h3 {
+    margin-top: 40px;
+}
+
+.kontak-cta .cta-button {
+    margin-top: none;
+}
+
+.kontak-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-bottom {
+    width: 100%;
+    padding: 20px 0;
+    border-top: 1px solid #ffffff1a;
+    text-align: center;
+    background-color: #00000054; /* Slightly darker background */
+}
+
+.footer-bottom p {
+    font-size: 0.9rem;
+    color: #b2dfdb;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .kontak-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .info-item:hover {
+        transform: translateY(-5px);
+    }
+}
+  
