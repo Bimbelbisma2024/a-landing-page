@@ -17,7 +17,7 @@
 </head>
 <body>
   <!-- HEADER -->
-  <header id="home">
+  <header class="header" id="home">
     <div class="container">
       <div class="logo">
         <img src="logo bisma removed bg square.png" alt="Bimbel BISMA Logo" class="logo-img">
@@ -49,9 +49,23 @@
       }
     });
   </script>
-  
-</body>
-</html>
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        const textElements = document.querySelectorAll('.animate-text');
+        textElements.forEach(el => observer.observe(el));
+    });
+  </script>
+
   <!-- HERO SECTION -->
   <section class="hero">
     <div class="hero-content">
@@ -68,20 +82,20 @@
     <div class="container">
       <div class="tentang-content">
         <div class="tentang-box">
-          <h3>Tentang Bimbel BISMA</h3>
-          <p>
+          <h3 class="animate-text">Tentang Bimbel BISMA</h3>
+          <p class="animate-text">
             Bimbel BISMA adalah lembaga bimbingan belajar profesional yang membantu siswa dari tingkat SD hingga SMA untuk meraih prestasi terbaiknya. Kami percaya bahwa setiap siswa memiliki potensi besar yang dapat dikembangkan dengan pendekatan belajar yang tepat.
           </p>
         </div>
         <div class="tentang-box">
-          <h3>Visi</h3>
-          <p>
+          <h3 class="animate-text">Visi</h3>
+          <p class="animate-text">
             Menjadi lembaga pendidikan yang unggul dalam mencetak generasi cerdas, berakhlak, dan siap menghadapi masa depan.
           </p>
         </div>
         <div class="tentang-box">
-          <h3>Misi</h3>
-          <ul>
+          <h3 class="animate-text">Misi</h3>
+          <ul class="animate-text">
             <li>Menyediakan layanan belajar berkualitas dengan pengajar yang kompeten.</li>
             <li>Mengembangkan sistem pembelajaran interaktif dan menyenangkan.</li>
             <li>Memberikan bimbingan akademik dan motivasi secara menyeluruh.</li>
@@ -93,12 +107,12 @@
 <!-- SEJARAH BIMBEL BISMA -->
 <section class="sejarah" id="sejarah">
     <div class="container">
-      <h2>Sejarah Kami</h2>
+      <h2 class="animate-text">Sejarah Kami</h2>
       <div class="sejarah-content">
-        <p>
+        <p class="animate-text">
           Bimbel BISMA didirikan pada tahun 2013 di Kota Bogor oleh seorang pendidik yang peduli terhadap kualitas pendidikan. Berawal dari bimbel khusus rohis di sekolah, kami berkembang menjadi lembaga yang kini dipercaya oleh sejumlah sekolah dan ratusan siswa setiap tahunnya.
         </p>
-        <p>
+        <p class="animate-text">
           Dalam perjalanannya, Bimbel BISMA terus berinovasi dalam sistem pembelajaran dan pengembangan konten digital, sehingga mampu bersaing di era pendidikan modern. Semangat kami tetap sama: membantu siswa belajar dengan cara yang <i>efektif</i> dengan biaya <i>terjangkau</i>.
         </p>
       </div>
@@ -110,19 +124,19 @@
     <div class="container">
       <div class="capaian-grid">
         <div class="card">
-          <h3>600+</h3>
+          <h3 class="counter" data-target="600">0</h3>
           <p>Alumni Bimbel</p>
         </div>
         <div class="card">
-          <h3>75%</h3>
+          <h3 class="counter" data-target="75">0</h3>
           <p>Tingkat Kelulusan</p>
         </div>
         <div class="card">
-          <h3>14</h3>
+          <h3 class="counter" data-target="14">0</h3>
           <p>Pengajar Profesional</p>
         </div>
         <div class="card">
-          <h3>5</h3>
+          <h3 class="counter" data-target="5">0</h3>
           <p>Program Unggulan</p>
         </div>
       </div>
@@ -216,4 +230,48 @@
         <p>&copy; 2025 Bimbel BISMA. All rights reserved.</p>
     </div>
 </section>
-          
+<script>
+    const counters = document.querySelectorAll('.counter');
+    
+    const options = {
+        threshold: 0.5
+    };
+    
+    const startCounting = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counter = entry.target;
+                const target = parseInt(counter.getAttribute('data-target'));
+                const duration = 1500; // 1.5 seconds
+                const step = (target / duration) * 10;
+                
+                let current = 0;
+                const updateCount = () => {
+                    if (current < target) {
+                        current = Math.min(current + step, target);
+                        if (target > 100) {
+                            counter.textContent = Math.ceil(current) + '+';
+                        } else {
+                            counter.textContent = target > 10 ? 
+                                Math.ceil(current) : 
+                                Math.ceil(current);
+                        }
+                        requestAnimationFrame(updateCount);
+                    }
+                };
+                
+                updateCount();
+                observer.unobserve(counter);
+            }
+        });
+    };
+    
+    const counterObserver = new IntersectionObserver(startCounting, options);
+    
+    counters.forEach(counter => {
+        counterObserver.observe(counter);
+    });
+</script>
+
+</body>
+</html>
